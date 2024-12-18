@@ -116,6 +116,7 @@ resource "equinix_fabric_connection" "pat-tf-fabric" {
   notifications {
     type   = "ALL"
     emails = ["porlando@equinix.com"]
+  }
   bandwidth = 50
   a_side {
     access_point {
