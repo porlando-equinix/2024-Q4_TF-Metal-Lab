@@ -131,6 +131,6 @@ resource "equinix_fabric_connection" "pat-tf-fabric" {
       uuid = equinix_metal_connection.pat-tf-fabric-da.service_token.0.id
     }
   }
-  depends_on = [equinix_metal_connections.pat-tf-fabric-da]
+  depends_on = [equinix_metal_connection.pat-tf-fabric-da]
 }
 
