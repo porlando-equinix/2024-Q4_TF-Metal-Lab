@@ -113,6 +113,9 @@ resource "equinix_metal_connection" "pat-tf-fabric-da" {
 resource "equinix_fabric_connection" "pat-tf-fabric" {
   name = "pat-tf-fabric"
   type = "EVPL_VC"
+  notifications {
+    type   = "ALL"
+    emails = ["porlando@equinix.com"]
   bandwidth = 50
   a_side {
     access_point {
@@ -128,7 +131,7 @@ resource "equinix_fabric_connection" "pat-tf-fabric" {
   }
   z_side {
     service_token {
-      uuid = equinix_metal_connection.pat-tf-fabric-da.service_token.0.id
+      uuid = equinix_metal_connection.pat-tf-fabric-da.service_tokens.0.id
     }
   }
   depends_on = [equinix_metal_connection.pat-tf-fabric-da]
